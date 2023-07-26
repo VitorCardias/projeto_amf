@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+    {% for i in home %}
+    <div class="post">
+        <div class="date">
+            {{ i.data_cadastro }}
+        </div>
+        <h2><a href=""></a>{{ i.titulo }}</h2>
+        <img src="{{i.imagem}}" width="100" height="100" >
+        <p>{{ i.descricao|linebreaksbr  }}</p>
+    </div>
+    {% endfor %}
+
+{% endblock %}

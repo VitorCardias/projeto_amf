@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Home
 
 
 def home(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    query_home = Home.objects.all()
+
+    
+    return render(request, "home/index.html", {"home": query_home})
